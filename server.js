@@ -1,8 +1,12 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine','pug'); //seteando el pug como gestor de vistas
+app.use(express.static('public'));
+
 app.get('/', function(req,res){
-	res.send('Hola mundo!');
+	//res.send('Hola mundo!');
+	res.render('index'); // por defecto busca en views
 });
 
 app.listen(3000, function(err){
