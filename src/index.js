@@ -1,4 +1,14 @@
-var numeros = [400, 200, 1, -23];
-var numerosMasUno = numeros.map(n => n + 2);
+var page = require('page');
 
-console.log(numerosMasUno);
+var main = document.getElementById('main-container');
+
+page('/', function(ctx,next){
+	main.innerHTML = 'Home <a href="/signup">Signup</a>';
+});
+
+
+page('/signup', function(ctx,next){
+	main.innerHTML = 'Signup <a href="/no-existe">No Existe</a>';
+});
+
+page();
